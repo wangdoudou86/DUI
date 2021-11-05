@@ -1,5 +1,7 @@
-// console.log('hihi');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var div = document.createElement('div')
-div.innerHTML = 'tenten'
-document.body.appendChild(div)
+
+console.log(React);
+console.log(ReactDOM);
+
