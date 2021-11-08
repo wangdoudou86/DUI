@@ -5,6 +5,6 @@ import Button from './button';
 
 ReactDOM.render(<Button />, document.body)
 
-console.log(React);
-console.log(ReactDOM);
+let a = 1
+export {Button, a}
 
