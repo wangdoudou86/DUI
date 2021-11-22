@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './button';
+import Icon from './icon';
 
+function App(){
+    return (
+        <div>
+            <Icon name="wechat"/>
 
-ReactDOM.render(<Button />, document.body)
+        </div>
+    )
+}
+ReactDOM.render(<App />, document.getElementById('app'))
 
-let a = 1
-export {Button, a}
 
