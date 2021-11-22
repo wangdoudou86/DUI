@@ -5,8 +5,7 @@ import Icon from './icon';
 function App(){
     return (
         <div>
-            <Icon name="wechat"/>
-
+            <Icon name="alipay"/>
         </div>
     )
 }
