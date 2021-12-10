@@ -1,18 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Icon from './icon';
+import React from "react";
+import ReactDOM from "react-dom";
+import Icon from "./icon";
 
-const fn: React.MouseEventHandler = (e)=>{
-    console.log(e.target);
+const fn: React.MouseEventHandler = (e) => {
+  console.log(e.target);
+};
+
+const onMouseEnter = () => {
+  console.log("enter");
+};
+
+function App() {
+  return (
+    <div>
+      <Icon name="alipay" onClick={fn} onMouseEnter={onMouseEnter} />
+    </div>
+  );
 }
-
-function App(){
-    return (
-        <div>
-            <Icon name="alipay" onClick={fn} />
-        </div>
-    )
-}
-ReactDOM.render(<App />, document.getElementById('app'))
-
-
+ReactDOM.render(<App />, document.getElementById("app"));
