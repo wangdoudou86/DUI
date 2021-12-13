@@ -13,7 +13,7 @@ const onMouseEnter = () => {
 function App() {
   return (
     <div>
-      <Icon name="alipay" onClick={fn} onMouseEnter={onMouseEnter} />
+      <Icon name="alipay" className="www" onClick={fn} onMouseEnter={onMouseEnter} />
     </div>
   );
 }
