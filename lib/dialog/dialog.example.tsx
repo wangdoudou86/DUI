@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Dialog from "./dialog";
+import Dialog, {alert} from "./dialog";
 import './dialog.example.scss';
 
 const DialogExample: React.FunctionComponent = () => {
@@ -33,6 +33,11 @@ const DialogExample: React.FunctionComponent = () => {
         >
           <h3>hello2</h3>
         </Dialog>
+      </div>
+      <div>
+        <h1>Example 3</h1>
+        <button onClick={() => alert('hello3')}>Alert</button>
+        
       </div>
     </div>
   );
