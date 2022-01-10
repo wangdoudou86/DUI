@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement } from "react";
+import React, { Fragment, ReactElement, ReactNode } from "react";
 import Icon from "../icon/icon";
 import "./dialog.scss";
 import { scopedClassMaker } from "../utils";
@@ -14,12 +14,12 @@ interface DialogIcon {
 const scopedClass = scopedClassMaker("dui-dialog");
 const sc = scopedClass; // 主要为了简化名称
 
-const Dialog: React.FunctionComponent<DialogIcon> = (props) => {
-  const onClickClose: React.MouseEventHandler = (e) => {
+const Dialog: React.FunctionComponent<DialogIcon> = props => {
+  const onClickClose: React.MouseEventHandler = e => {
     props.onClose(e);
   };
 
-  const onClickMask: React.MouseEventHandler = (e) => {
+  const onClickMask: React.MouseEventHandler = e => {
     if (props.closeonClickMask) props.onClose(e);
   };
 
@@ -47,7 +47,7 @@ const Dialog: React.FunctionComponent<DialogIcon> = (props) => {
 
 // 给组件的一些props设置默认值
 Dialog.defaultProps = {
-  closeonClickMask: false,
+  closeonClickMask: false
 };
 
 const alert = (content: string) => {
@@ -64,10 +64,62 @@ const alert = (content: string) => {
     </Dialog>
   );
   const div = document.createElement("div");
-  document.body.append(div);
+  document.body.appendChild(div);
   ReactDOM.render(component, div);
 };
 
-export { alert };
+const comfirm = (content: string, success?: () => void, fail?: () => void) => {
+  const closeFn = () => {
+    ReactDOM.render(React.cloneElement(component, { visible: false }), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove();
+  };
+  const successFn = () => {
+    success && success();
+    closeFn();
+  };
+  const failFn = () => {
+    fail && fail();
+    closeFn();
+  };
+  const component = (
+    <Dialog
+      visible={true}
+      onClose={failFn}
+      buttons={[
+        <button onClick={failFn}>取消</button>,
+        <button onClick={successFn}>确认</button>
+      ]}
+    >
+      {content}
+    </Dialog>
+  );
+  const div = document.createElement("div");
+  document.body.appendChild(div);
+  ReactDOM.render(component, div);
+};
+
+const modal = (content: ReactNode) => {
+  const closeFn = () => {
+    ReactDOM.render(React.cloneElement(component, { visible: false }), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove();
+  };
+  const component = (
+    <Dialog
+      visible={true}
+      onClose={closeFn}
+    >
+      {content}
+    </Dialog>
+  );
+  const div = document.createElement("div");
+  document.body.appendChild(div);
+  ReactDOM.render(component, div);
+
+  return closeFn;
+};
+
+export { alert, comfirm, modal };
 
 export default Dialog;
