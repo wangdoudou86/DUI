@@ -46,7 +46,15 @@ const DialogExample: React.FunctionComponent = () => {
       </div>
       <div>
         <h1>Example 3</h1>
-        <button onClick={() => alert("hello3")}>Alert</button>
+        <button
+          onClick={() =>
+            alert(
+              "我是Alert，点击【确认】表示你已知晓，即使你不知晓，但你可以再次点开"
+            )
+          }
+        >
+          Alert
+        </button>
         <button
           onClick={() =>
             comfirm(
