@@ -1,0 +1,8 @@
+@import "../helper";
+
+.dui-layout{
+    border: 1px solid purple;
+    &-header{
+        border: 1px solid pink;
+    }
+}
