@@ -8,7 +8,7 @@ const DialogExample: React.FunctionComponent = () => {
   const openModal = () => {
     const close = modal(
       <div>
-        <h1>你好</h1>
+        <div>我是modal，你可以自定义内容的结构及样式</div>
         <button style={{ color: "purple" }} onClick={() => close()}>
           close
         </button>
@@ -22,12 +22,12 @@ const DialogExample: React.FunctionComponent = () => {
         <button onClick={() => setX(!x)}>hello1</button>
         <Dialog
           visible={x}
-          buttons={[<button>1</button>, <button>2</button>]}
+          buttons={[<button onClick={() => { console.log('你点击了no'); setX(false); }}>no</button>, <button onClick={() => { console.log('你点击了yes'); setX(false); }}>yes</button>]}
           onClose={() => {
             setX(false);
           }}
         >
-          <h3>hello1</h3>
+          <div>这是由标签生成的Dialog，点击遮罩默认不关闭</div>
         </Dialog>
       </div>
       <div>
@@ -35,13 +35,13 @@ const DialogExample: React.FunctionComponent = () => {
         <button onClick={() => setY(!y)}>hello2</button>
         <Dialog
           visible={y}
-          buttons={[<button>1</button>, <button>2</button>]}
+          buttons={[<button onClick={() => { console.log('你点击了取消'); setY(false); }}>取消</button>, <button onClick={() => { console.log('你点击了确认'); setY(false); }}>确认</button>]}
           onClose={() => {
             setY(false);
           }}
           closeonClickMask={true}
         >
-          <h3>hello2</h3>
+          <div>设置点击遮罩关闭Dialog</div>
         </Dialog>
       </div>
       <div>
@@ -58,7 +58,7 @@ const DialogExample: React.FunctionComponent = () => {
         <button
           onClick={() =>
             comfirm(
-              "hello4",
+              "我是comfirm，点击按钮做出你的选择吧~",
               () => console.log("success"),
               () => console.log("fail")
             )

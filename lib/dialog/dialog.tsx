@@ -6,9 +6,9 @@ import ReactDOM from "react-dom";
 
 interface DialogIcon {
   visible: boolean;
-  buttons?: Array<ReactElement>;
-  onClose: React.MouseEventHandler;
-  closeonClickMask?: boolean;
+  buttons?: Array<ReactElement>; // 按钮
+  onClose: React.MouseEventHandler; // 关闭弹窗的函数
+  closeonClickMask?: boolean; // 点击遮罩是否可以关闭弹窗
 }
 
 const scopedClass = scopedClassMaker("dui-dialog");
@@ -49,7 +49,7 @@ const Dialog: React.FunctionComponent<DialogIcon> = (props) => {
 
 // 给组件的一些props设置默认值
 Dialog.defaultProps = {
-  closeonClickMask: false,
+  closeonClickMask: false
 };
 
 const commom = (
