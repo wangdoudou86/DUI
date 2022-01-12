@@ -1,8 +1,15 @@
 @import "../helper";
 
 .dui-layout{
-    border: 1px solid purple;
-    &-header{
-        border: 1px solid pink;
+    display: flex;
+    flex-direction: column;
+    &.dui-layout-hasAsider{
+        flex-direction: row;
+    }
+    & &{
+        flex-grow: 1;
+    }
+    &-content{
+        flex-grow: 1;
     }
 }

@@ -1,0 +1,17 @@
+@import "../helper";
+.dui-layout{
+    width: 50vw;
+    height: 300px;
+    &-header{
+        background: $header-bg-color;
+    }
+    &-footer{
+        background: $footer-bg-color;
+    }
+    &-content{
+        background: $content-bg-color;
+    }
+    &-asider{
+        background: $asider-bg-color;
+    }
+}
