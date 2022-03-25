@@ -1,0 +1,23 @@
+.dui-demo{
+    max-width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    &-content{
+        padding: 20px;
+    }
+
+    &-button{
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding: 8px 10px;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        margin: 0 0 20px 20px;
+        cursor: pointer;
+    }
+
+    &-code{
+        padding: 20px;
+    }
+}
