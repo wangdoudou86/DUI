@@ -24,6 +24,9 @@ const Dialog: React.FunctionComponent<DialogProps> = (props) => {
     if (props.closeonClickMask) props.onClose(e);
   };
 
+  //禁止滑动
+  document.body.style.overflow = props.visible ? 'hidden' : 'auto';
+
   const x = props.visible ? (
     <Fragment>
       <div className={sc("mask")} onClick={onClickMask}></div>
@@ -62,6 +65,7 @@ const commom = (
   const closeFn = () => {
     ReactDOM.render(React.cloneElement(component, { visible: false }), div);
     ReactDOM.unmountComponentAtNode(div);
+    document.body.style.overflow = 'auto'
     div.remove();
   };
   const failAndClose = () => {
@@ -75,6 +79,7 @@ const commom = (
   );
   const div = document.createElement("div");
   document.body.appendChild(div);
+  document.body.style.overflow = 'hidden'
   ReactDOM.render(component, div);
 
   //为了可以关闭对话框
