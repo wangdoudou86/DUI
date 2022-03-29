@@ -1,6 +1,61 @@
-.dui-dialog-mask{
-    z-index: 11;
+.dui-dialog-mask {
+  z-index: 11;
 }
-.dui-dialog{
-    z-index: 12;
+.dui-dialog {
+  z-index: 12;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 6px 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  margin: 10px 5px 10px 0;
+  color: #595959;
+  cursor: pointer;
+}
+
+
+.demo-api{
+    h2{
+        margin: 10px 0;
+    }
+    .demo-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      empty-cells: show;
+      color: #595959;
+      thead {
+        background-color: #f5f5f5;
+        text-align: center;
+      }
+      tbody {
+        text-align: center;
+      }
+      th,td{
+        padding: 10px 0;
+        font-size: 14px;
+      }
+      th {
+        font-weight: 500;
+        &.des,&.type{
+            text-align: left;
+            width: 30%;
+        }
+      }
+      td {
+        border-bottom: 1px solid #d9d9d9;
+        font-weight: 400;
+        &.des,&.type{
+            text-align: left;
+            width: 30%;
+        }
+        &.type{
+            color: #c41d7f;
+        }
+      }
+    }
 }

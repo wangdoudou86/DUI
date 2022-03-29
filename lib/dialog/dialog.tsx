@@ -4,8 +4,9 @@ import "./dialog.scss";
 import { scopedClassMaker } from "../utils";
 import ReactDOM from "react-dom";
 
-interface DialogIcon {
+interface DialogProps {
   visible: boolean;
+  title?: string;
   buttons?: Array<ReactElement>; // 按钮
   onClose: React.MouseEventHandler; // 关闭弹窗的函数
   closeonClickMask?: boolean; // 点击遮罩是否可以关闭弹窗
@@ -14,7 +15,7 @@ interface DialogIcon {
 const scopedClass = scopedClassMaker("dui-dialog");
 const sc = scopedClass; // 主要为了简化名称
 
-const Dialog: React.FunctionComponent<DialogIcon> = (props) => {
+const Dialog: React.FunctionComponent<DialogProps> = (props) => {
   const onClickClose: React.MouseEventHandler = (e) => {
     props.onClose(e);
   };
@@ -30,13 +31,13 @@ const Dialog: React.FunctionComponent<DialogIcon> = (props) => {
         <div className={sc("close")} onClick={onClickClose}>
           <Icon name="close" />
         </div>
-        <header className={sc("header")}>提示</header>
+        <header className={sc("header")}>{props.title}</header>
         <main className={sc("main")}>{props.children}</main>
         {props.buttons && props.buttons.length > 0 && (
           <footer className={sc("footer")}>
             {props.buttons &&
               props.buttons.map((button, index) => {
-                return React.cloneElement(button, { key: index });
+                return React.cloneElement(button, { key: index, className: sc("button") });
               })}
           </footer>
         )}
@@ -49,7 +50,8 @@ const Dialog: React.FunctionComponent<DialogIcon> = (props) => {
 
 // 给组件的一些props设置默认值
 Dialog.defaultProps = {
-  closeonClickMask: false
+  title: '提示',
+  closeonClickMask: false,
 };
 
 const commom = (
@@ -75,20 +77,21 @@ const commom = (
   document.body.appendChild(div);
   ReactDOM.render(component, div);
 
+  //为了可以关闭对话框
   return closeFn;
 };
 
 const alert = (content: string) => {
   const button = [
     <button
-      onClick={() => {
-        closeFn();
+      onClick={()=>{
+        closeFn11()
       }}
     >
       确定
     </button>,
   ];
-  const closeFn = commom(content, button);
+  const closeFn11 = commom(content, button);
 };
 
 const comfirm = (content: string, success?: () => void, fail?: () => void) => {

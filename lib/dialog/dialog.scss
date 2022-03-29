@@ -32,6 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   &-header {
     font-size: 22px;
@@ -47,6 +48,19 @@
     border-top: 1px solid $border-color;
     display: flex;
     justify-content: flex-end;
+  }
+  &-button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 6px 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    margin: 10px 0 10px 5px;
+    cursor: pointer;
+    &:focus{
+      box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.15);
+    }
   }
   
 }

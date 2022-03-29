@@ -34,7 +34,6 @@ const Demo: React.FunctionComponent<Props> = (props) => {
 
             <button  className="dui-demo-button" onClick={()=>{setCodeVisible(!codeVisible)}}>{codeVisible ? '隐藏代码' : '显示代码'}</button>
             {codeVisible && code}
-            
         </div>
     )
 }
