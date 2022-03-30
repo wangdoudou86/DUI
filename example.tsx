@@ -8,7 +8,7 @@ import introductionDemo from './lib/introduction';
 import DialogDemo from './lib/dialog/dialogDemo';
 import LayoutDemo from './lib/layout/layoutDemo';
 
-import { Layout, Header, Asider, Content, Footer } from './lib/layout/index';
+import { Layout, Header, Asider, Content, Footer } from './lib/layout/LayoutIndex';
 import './example.scss';
 
 ReactDOM.render(
