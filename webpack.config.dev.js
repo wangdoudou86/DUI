@@ -7,7 +7,7 @@ module.exports = Object.assign({}, base, {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'DUI-DEMO',
+            title: 'DUI',
             template: 'example.html'
         })
     ]
