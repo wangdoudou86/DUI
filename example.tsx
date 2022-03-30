@@ -1,15 +1,12 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
-// import './lib/index.scss';
-// import IconExample from './lib/icon/icon.example';
 
 import IndexDemo from './lib/indexDemo';
-import IconDemo from './lib/icon/iconDemo';
 
 import ButtonExample from './lib/button/button.example';
 import DialogDemo from './lib/dialog/dialogDemo';
-import LayoutExample from './lib/layout/layout.example';
+import LayoutDemo from './lib/layout/layoutDemo';
 
 import { Layout, Header, Asider, Content, Footer } from './lib/layout/index';
 import './example.scss';
@@ -37,9 +34,6 @@ ReactDOM.render(
                     </h2>
                     <ul>
                         <li>
-                            <NavLink to='/icon'>Icon</NavLink>
-                        </li>
-                        <li>
                             <NavLink to='/button'>Button</NavLink>
                         </li>
                         <li>
@@ -54,10 +48,9 @@ ReactDOM.render(
                 <Content className="site-main">
                     <div className="site-context">
                         <Route path='/introduction' component={IndexDemo} />
-                        <Route path='/icon' component={IconDemo} />
                         <Route path='/button' component={ButtonExample} />
                         <Route path='/dialog' component={DialogDemo} />
-                        <Route path='/layout' component={LayoutExample} />
+                        <Route path='/layout' component={LayoutDemo} />
                     </div>
                 </Content>
             </Layout>
