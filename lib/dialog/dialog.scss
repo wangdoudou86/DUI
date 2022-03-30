@@ -58,6 +58,10 @@
     border-radius: 4px;
     margin: 10px 0 10px 5px;
     cursor: pointer;
+    &:hover{
+      color: $main-color;
+      border-color: $main-color;
+    }
     &:focus{
       box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.15);
     }
