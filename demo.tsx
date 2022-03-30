@@ -5,7 +5,8 @@ import './demo.scss';
 import { useState } from 'react';
 
 interface Props {
-    code: string
+    code: string;
+    description?: string;
 }
 const Demo: React.FunctionComponent<Props> = (props) => {
     const [codeVisible, setCodeVisible] = useState(false)
@@ -28,8 +29,12 @@ const Demo: React.FunctionComponent<Props> = (props) => {
 
     return (
         <div className="dui-demo">
+
             <div className="dui-demo-content">
                 {props.children}
+                <div className="dui-demo-des">
+                    {props.description}
+                </div>
             </div>
 
             <button  className="dui-demo-button" onClick={()=>{setCodeVisible(!codeVisible)}}>{codeVisible ? '隐藏代码' : '显示代码'}</button>

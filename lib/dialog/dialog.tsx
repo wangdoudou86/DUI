@@ -26,6 +26,8 @@ const Dialog: React.FunctionComponent<DialogProps> = (props) => {
 
   //禁止滑动
   document.body.style.overflow = props.visible ? 'hidden' : 'auto';
+  //防止滚动条消失带来的晃动
+  document.body.style.paddingRight = props.visible ? '17px' : '0';
 
   const x = props.visible ? (
     <Fragment>
@@ -40,6 +42,7 @@ const Dialog: React.FunctionComponent<DialogProps> = (props) => {
           <footer className={sc("footer")}>
             {props.buttons &&
               props.buttons.map((button, index) => {
+                //因为要给button元素加上key属性，所以用了React.cloneElement方法
                 return React.cloneElement(button, { key: index, className: sc("button") });
               })}
           </footer>
@@ -57,15 +60,22 @@ Dialog.defaultProps = {
   closeonClickMask: false,
 };
 
-const commom = (
-  content: ReactNode,
-  buttons?: Array<ReactElement>,
-  fail?: () => void
-) => {
+interface commonProps{
+  content: ReactNode;
+  title?: string;
+  buttons?: Array<ReactElement>;
+  fail?: () => void;
+}
+const commom = ( props:commonProps ) => {
+  const {content, title, buttons, fail} = props
   const closeFn = () => {
+    //先隐藏组件
     ReactDOM.render(React.cloneElement(component, { visible: false }), div);
+    //把组件从节点中移除
     ReactDOM.unmountComponentAtNode(div);
     document.body.style.overflow = 'auto'
+    document.body.style.paddingRight = '0'
+    //删除节点
     div.remove();
   };
   const failAndClose = () => {
@@ -73,33 +83,46 @@ const commom = (
     closeFn();
   };
   const component = (
-    <Dialog visible={true} buttons={buttons} onClose={failAndClose}>
+    <Dialog title={title} visible={true} buttons={buttons} onClose={failAndClose}>
       {content}
     </Dialog>
   );
   const div = document.createElement("div");
   document.body.appendChild(div);
   document.body.style.overflow = 'hidden'
+  document.body.style.paddingRight = '17px'
   ReactDOM.render(component, div);
 
-  //为了可以关闭对话框
+  //为了可以关闭对话框，这里设计很巧妙！！！
   return closeFn;
 };
 
-const alert = (content: string) => {
+interface alertProps{
+  content: string;
+  title?: string;
+}
+const alert = (props: alertProps) => {
+  const {content, title} = props
   const button = [
     <button
-      onClick={()=>{
-        closeFn11()
+      onClick={() => {
+        closeFn()
       }}
     >
       确定
     </button>,
   ];
-  const closeFn11 = commom(content, button);
+  const closeFn = commom({content, title, buttons: button});
 };
 
-const comfirm = (content: string, success?: () => void, fail?: () => void) => {
+interface comfirmProps{
+  content: string;
+  title?: string;
+  success?: () => void;
+  fail?: () => void
+}
+const comfirm = (props: comfirmProps) => {
+  const {content, title, success, fail} = props
   const successFn = () => {
     success && success();
     closeFn();
@@ -112,11 +135,17 @@ const comfirm = (content: string, success?: () => void, fail?: () => void) => {
     <button onClick={failFn}>取消</button>,
     <button onClick={successFn}>确认</button>,
   ];
-  const closeFn = commom(content, buttons, fail);
+  const closeFn = commom({content, title, buttons, fail});
 };
 
-const modal = (content: ReactNode) => {
-  return commom(content);
+interface modalProps{
+  content: ReactNode;
+  title?: string;
+}
+
+const modal = (props: modalProps) => {
+  const {content, title} = props
+  return commom({content, title});
 };
 
 export { alert, comfirm, modal };
