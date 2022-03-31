@@ -36,67 +36,64 @@ body {
 .site-page {
   background: #ffffff;
   min-height: 100vh;
-}
-.site-main {
-  padding-top: 16px;
-  .site-context{
-    max-width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-.site-header {
-  background: #fff;
-  padding: $padding 0;
-  box-shadow: 0 2px 8px rgba(0,0,0, .15);
-  margin-bottom: 20px;
-  .logo {
-    padding: 0 $padding;
-    display: flex;
-    align-items: center;
-    > img {
-      margin-right: 8px;
-    }
-    > span {
-      color: $light-color;
-      font-size: 32px;
+  .site-header {
+    background: #fff;
+    padding: $padding 0;
+    box-shadow: 0 2px 8px rgba(0,0,0, .15);
+    margin-bottom: 20px;
+    .logo {
+      padding: 0 $padding;
+      color: $dark-color;
+      font-weight: bold;
     }
   }
-}
-.site-aside {
-  border-right: 1px solid #eeeeee;
-  margin-right: 16px;
-  h2 {
-    padding: $padding;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  ul {
-    min-width: 12em;
-    > li {
-      a {
-        color: #333;
-        display: block;
-        padding: 8px $padding 8px 30px;
-        transition: all .2s;
-        &:hover {
-          color: $dark-color;
+  .site-aside {
+    border-right: 1px solid #eeeeee;
+    margin-right: 16px;
+    h2 {
+      padding: $padding;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    ul {
+      min-width: 12em;
+      > li {
+        a {
+          color: #333;
+          display: block;
+          padding: 8px $padding 8px 30px;
+          transition: all .2s;
+          &:hover {
+            color: $dark-color;
+          }
+          &.active {
+            color: $dark-color;
+            background: $light-color;
+            border-right: 3px solid $dark-color;
+          }
         }
-        &.active {
-          color: $dark-color;
-          background: $light-color;
-          border-right: 3px solid $dark-color;
-        }
-      }
-      &.main-item{
-        a{
-          padding: 8px $padding;
-          font-weight: bold;
+        &.main-item{
+          a{
+            padding: 8px $padding;
+            font-weight: bold;
+          }
         }
       }
     }
   }
+
+  .site-main {
+    padding-top: 16px;
+    .site-context{
+      max-width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
 }
+
+
 .site-footer {
   text-align: center;
   font-size: 14px;

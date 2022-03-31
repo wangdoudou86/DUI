@@ -7,7 +7,7 @@ module.exports = Object.assign({}, base, {
         example: './example.tsx'  //入口文件，example是文件名，可以改成其他的名字
     },
     output: {
-        path: path.resolve(__dirname, 'doc')
+        path: path.resolve(__dirname, 'doc') //文件输出到doc目录
     },
     plugins: [
         new HtmlWebpackPlugin({

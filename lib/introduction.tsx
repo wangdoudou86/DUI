@@ -7,7 +7,7 @@ const introductionDemo = () => {
             <div className="content">
                 <h1>DUI</h1>
                 <div className="des">
-                    DUI是一套 PC 端React组件库，主要目的是为了更快地熟悉React，当然你也可以下载并预览它，目前组件还在有序开发中...
+                    DUI是一套 PC 端React UI组件库，主要目的是为了更快地熟悉React，目前组件还在有序完善中...
                 </div>
             </div>
             <div className="content">

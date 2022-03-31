@@ -4,7 +4,7 @@ import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import introductionDemo from './lib/introduction';
 
-import ButtonExample from './lib/button/button.example';
+// import ButtonExample from './lib/button/button.example';
 import DialogDemo from './lib/dialog/dialogDemo';
 import LayoutDemo from './lib/layout/layoutDemo';
 
@@ -24,23 +24,23 @@ ReactDOM.render(
                     <Fragment>
                         <ul>
                             <li className='main-item'>
-                            <NavLink to='/introduction'>DUI</NavLink>
+                            <NavLink to='/introduction'>首页</NavLink>
                             </li>
                         </ul>
                     </Fragment>
                     <Fragment>
                     <h2>
-                        组件111
+                        组件
                     </h2>
                     <ul>
-                        <li>
+                        {/* <li>
                             <NavLink to='/button'>Button</NavLink>
+                        </li> */}
+                        <li>
+                            <NavLink to='/layout'>Layout</NavLink>
                         </li>
                         <li>
                             <NavLink to='/dialog'>Dialog</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/layout'>Layout</NavLink>
                         </li>
                     </ul>
                     </Fragment>
@@ -48,9 +48,9 @@ ReactDOM.render(
                 <Content className="site-main">
                     <div className="site-context">
                         <Route path='/introduction' component={introductionDemo} />
-                        <Route path='/button' component={ButtonExample} />
-                        <Route path='/dialog' component={DialogDemo} />
+                        {/* <Route path='/button' component={ButtonExample} /> */}
                         <Route path='/layout' component={LayoutDemo} />
+                        <Route path='/dialog' component={DialogDemo} />
                     </div>
                 </Content>
             </Layout>
