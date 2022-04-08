@@ -1,7 +1,8 @@
 import React, { Fragment, ReactElement, ReactNode } from "react";
 import Icon from "../icon/icon";
+import Button from "../button/button";
 import "./dialog.scss";
-import { scopedClassMaker } from "../utils";
+import { scopedClassMaker } from '../helpers/utils';
 import ReactDOM from "react-dom";
 
 interface DialogProps {
@@ -104,13 +105,14 @@ interface alertProps{
 const alert = (props: alertProps) => {
   const {content, title} = props
   const button = [
-    <button
+    <Button
+    
       onClick={() => {
         closeFn()
       }}
     >
       确定
-    </button>,
+    </Button>,
   ];
   const closeFn = commom({content, title, buttons: button});
 };
@@ -132,8 +134,8 @@ const comfirm = (props: comfirmProps) => {
     closeFn();
   };
   const buttons = [
-    <button onClick={failFn}>取消</button>,
-    <button onClick={successFn}>确认</button>,
+    <Button className={sc('button')} onClick={failFn}>取消</Button>,
+    <Button className={sc('button')} buttonType="primary" onClick={successFn}>确认</Button>,
   ];
   const closeFn = commom({content, title, buttons, fail});
 };

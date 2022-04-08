@@ -1,8 +1,9 @@
 import * as React from 'react';
 import Highlight, { defaultProps } from "prism-react-renderer";
-import classes from './lib/helpers/classes';
+import { classes } from './lib/helpers/utils';
 import './demo.scss';
 import { useState } from 'react';
+import Button from './lib/button/button';
 
 interface Props {
     code: string;
@@ -37,7 +38,7 @@ const Demo: React.FunctionComponent<Props> = (props) => {
                 </div>
             </div>
 
-            <button className="dui-demo-button" onClick={() => { setCodeVisible(!codeVisible) }}>{codeVisible ? '隐藏代码' : '显示代码'}</button>
+            <Button className="dui-demo-button" onClick={() => { setCodeVisible(!codeVisible) }}>{codeVisible ? '隐藏代码' : '显示代码'}</Button>
             {codeVisible && code}
         </div>
     )

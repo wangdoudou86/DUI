@@ -1,7 +1,6 @@
 import React, { ReactElement } from "react";
 import './layout.scss';
-import { scopedClassMaker } from "../utils";
-import classes from "../helpers/classes";
+import { classes, scopedClassMaker } from "../helpers/utils";
 import Asider from "./asider";
 
 interface LayoutProps extends React.HTMLAttributes<HTMLElement> {

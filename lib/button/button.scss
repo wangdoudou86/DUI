@@ -1,0 +1,48 @@
+@import "../helper.scss";
+.dui-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &-primary {
+    background-color: $main-color;
+    color: white;
+    &:hover,
+    &:focus {
+      background-color: lighten($main-color, 10%);
+    }
+  }
+
+  &-default {
+    border: 1px solid $border-color;
+    color: $font-color;
+    &:hover,
+    &:focus {
+      color: $main-color;
+      border-color: $main-color;
+    }
+  }
+  &-dashed{
+    border: 1px dashed $border-color;
+    color: $font-color;
+    &:hover,
+    &:focus {
+      color: $main-color;
+      border-color: $main-color;
+    }
+  }
+  &-text{
+    color: $font-color;
+    &:hover,
+    &:focus {
+        background-color: lighten($border-color, 10%);
+    }
+  }
+
+  &-link{
+    color: $main-color;
+  }
+}

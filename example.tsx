@@ -4,9 +4,11 @@ import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import introductionDemo from './lib/introduction';
 
-// import ButtonExample from './lib/button/button.example';
+import ButtonDemo from './lib/button/buttonDemo';
 import DialogDemo from './lib/dialog/dialogDemo';
 import LayoutDemo from './lib/layout/layoutDemo';
+
+import FormExample from './lib/form/form.example'
 
 import { Layout, Header, Asider, Content, Footer } from './lib/layout/LayoutIndex';
 import './example.scss';
@@ -33,14 +35,17 @@ ReactDOM.render(
                         组件
                     </h2>
                     <ul>
-                        {/* <li>
+                        <li>
                             <NavLink to='/button'>Button</NavLink>
-                        </li> */}
+                        </li>
                         <li>
                             <NavLink to='/layout'>Layout</NavLink>
                         </li>
                         <li>
                             <NavLink to='/dialog'>Dialog</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/form'>Form</NavLink>
                         </li>
                     </ul>
                     </Fragment>
@@ -48,9 +53,10 @@ ReactDOM.render(
                 <Content className="site-main">
                     <div className="site-context">
                         <Route path='/introduction' component={introductionDemo} />
-                        {/* <Route path='/button' component={ButtonExample} /> */}
+                        <Route path='/button' component={ButtonDemo} />
                         <Route path='/layout' component={LayoutDemo} />
                         <Route path='/dialog' component={DialogDemo} />
+                        <Route path='/form' component={FormExample} />
                     </div>
                 </Content>
             </Layout>

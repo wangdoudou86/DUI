@@ -1,6 +1,5 @@
 import React from "react";
-import { scopedClassMaker } from "../utils";
-import classes from "../helpers/classes";
+import { classes, scopedClassMaker } from "../helpers/utils";
 
 
 interface FooterProps extends React.HTMLAttributes<HTMLElement>{

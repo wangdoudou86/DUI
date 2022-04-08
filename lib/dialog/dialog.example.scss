@@ -1,23 +1,24 @@
 @import "../_helper.scss";
-.dui-dialog-mask {
-  z-index: 11;
-}
-.dui-dialog {
-  z-index: 12;
-}
 
-button {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  padding: 6px 10px;
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
-  margin: 10px 5px 10px 0;
-  color: #595959;
-  cursor: pointer;
-  &:hover{
-    color: $main-color;
-    border-color: $main-color;
+.dialog-example{
+  button{
+    margin: 10px 5px 10px 0;
   }
 }
+
+
+// button {
+//   border: none;
+//   outline: none;
+//   background-color: transparent;
+//   padding: 6px 10px;
+//   border: 1px solid #d9d9d9;
+//   border-radius: 4px;
+//   margin: 10px 5px 10px 0;
+//   color: #595959;
+//   cursor: pointer;
+//   &:hover{
+//     color: $main-color;
+//     border-color: $main-color;
+//   }
+// }
