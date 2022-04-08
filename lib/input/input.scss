@@ -1,0 +1,14 @@
+@import "../helper.scss";
+.dui-input {
+  border: 1px solid $border-color;
+  line-height: 22px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px fade-out($main-color, 1);
+  transition: box-shadow 400ms;
+  &:focus {
+    outline: none;
+    border-color: $main-color;
+    box-shadow: 0 0 0 2px fade-out($main-color, 0.8);
+  }
+}
