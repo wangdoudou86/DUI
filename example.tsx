@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import introductionDemo from './lib/introduction';
-
 import ButtonDemo from './lib/button/buttonDemo';
 import DialogDemo from './lib/dialog/dialogDemo';
 import LayoutDemo from './lib/layout/layoutDemo';
-
-import FormExample from './lib/form/form.example'
+import FormExample from './lib/form/form.example';
 
 import { Layout, Header, Asider, Content, Footer } from './lib/layout/LayoutIndex';
 import './example.scss';
