@@ -1,0 +1,14 @@
+.dui-scroll{
+    position: relative;
+    overflow: hidden;
+    &-inner{
+        border: 2px solid green;
+    overflow: auto;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
