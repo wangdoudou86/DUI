@@ -3,7 +3,7 @@ import React from 'react';
 import Button from '../button';
 
 describe('button', () => {
-    it('是个div', () => {
+    it('是个button', () => {
         const json = renderer.create(<Button/>).toJSON()
         expect(json).toMatchSnapshot()
     })

@@ -1,4 +1,4 @@
-import classes from '../classes'
+import {classes} from '../utils'
 describe('classes', () => {
   it('接受 1 个 className', () => {
     const result = classes('a')

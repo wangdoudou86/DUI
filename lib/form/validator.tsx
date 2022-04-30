@@ -30,7 +30,7 @@ const addError = (
   errors[rule.key].push(rule.message ? rule.message : defaultMessage);
 };
 
-const Validator = (formValue: FormValue, rules: FormRules): FormErrors => {
+const Validator = (formValue: FormValue, rules: FormRules, callback: (errors:any)=>void): void => {
   const errors: FormErrors = {};
   rules.map((rule) => {
     const value = formValue[rule.key];
@@ -55,7 +55,8 @@ const Validator = (formValue: FormValue, rules: FormRules): FormErrors => {
       }
     }
   });
-  return errors;
+  callback(errors)
+  // return errors;
 };
 
 export default Validator;
