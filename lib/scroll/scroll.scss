@@ -1,14 +1,27 @@
-.dui-scroll{
-    position: relative;
-    overflow: hidden;
-    &-inner{
-        border: 2px solid green;
+.dui-scroll {
+  position: relative;
+  overflow: hidden;
+  &-inner {
     overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
+  &-track{
+      width: 10px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+  &-bar{
+      background: rgba(128, 128, 128, 0.5);
+      position: absolute;
+      left: 1px;
+      width: 8px;
+      border-radius: 4px;
+  }
 }
