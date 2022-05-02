@@ -3,7 +3,7 @@ import Scroll from './scroll';
 
 const ScrollExample: React.FunctionComponent = (props) => {
     return(
-        <Scroll style={{height: 300, border: '1px solid red'}}>
+        <Scroll style={{height: 200, border: '1px solid #d9d9d9'}} scrollbarVisible={false}>
             <p>1</p>
             <p>2</p>
             <p>3</p>
@@ -24,16 +24,6 @@ const ScrollExample: React.FunctionComponent = (props) => {
             <p>18</p>
             <p>19</p>
             <p>20</p>
-            <p>21</p>
-            <p>22</p>
-            <p>23</p>
-            <p>24</p>
-            <p>25</p>
-            <p>26</p>
-            <p>27</p>
-            <p>28</p>
-            <p>29</p>
-            <p>30</p>
         </Scroll>
     )
 }
