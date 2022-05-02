@@ -19,7 +19,7 @@ interface ScrollProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Scroll: React.FunctionComponent<ScrollProps> = (props) => {
-  const { children, className, ...rest } = props;
+  const { children, className, scrollbarVisible, barColor, ...rest } = props;
   const [barHeight, setBarHeight] = useState(0);
   const [barTop, _setBarTop] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);

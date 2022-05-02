@@ -7,7 +7,7 @@ import ButtonDemo from './lib/button/buttonDemo';
 import DialogDemo from './lib/dialog/dialogDemo';
 import LayoutDemo from './lib/layout/layoutDemo';
 import FormExample from './lib/form/form.example';
-import ScrollExample from './lib/scroll/scroll.example';
+import ScrollDemo from './lib/scroll/scrollDemo'
 
 import { Layout, Header, Asider, Content, Footer } from './lib/layout/LayoutIndex';
 import './example.scss';
@@ -59,7 +59,7 @@ ReactDOM.render(
                         <Route path='/layout' component={LayoutDemo} />
                         <Route path='/dialog' component={DialogDemo} />
                         <Route path='/form' component={FormExample} />
-                        <Route path='/scroll' component={ScrollExample} />
+                        <Route path='/scroll' component={ScrollDemo} />
                     </div>
                 </Content>
             </Layout>
