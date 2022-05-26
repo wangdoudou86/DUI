@@ -6,8 +6,10 @@ import introductionDemo from './lib/introduction';
 import ButtonDemo from './lib/button/buttonDemo';
 import DialogDemo from './lib/dialog/dialogDemo';
 import LayoutDemo from './lib/layout/layoutDemo';
-import FormExample from './lib/form/form.example';
+// import FormExample from './lib/form/form.example';
 import ScrollDemo from './lib/scroll/scrollDemo'
+
+import TreeExample from './lib/tree/tree.example'
 
 import { Layout, Header, Asider, Content, Footer } from './lib/layout/LayoutIndex';
 import './example.scss';
@@ -43,11 +45,14 @@ ReactDOM.render(
                         <li>
                             <NavLink to='/dialog'>Dialog</NavLink>
                         </li>
-                        <li>
+                        {/* <li>
                             <NavLink to='/form'>Form</NavLink>
-                        </li>
+                        </li> */}
                         <li>
                             <NavLink to='/scroll'>Scroll</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/tree'>Tree</NavLink>
                         </li>
                     </ul>
                     </Fragment>
@@ -58,8 +63,9 @@ ReactDOM.render(
                         <Route path='/button' component={ButtonDemo} />
                         <Route path='/layout' component={LayoutDemo} />
                         <Route path='/dialog' component={DialogDemo} />
-                        <Route path='/form' component={FormExample} />
+                        {/* <Route path='/form' component={FormExample} /> */}
                         <Route path='/scroll' component={ScrollDemo} />
+                        <Route path='/tree' component={TreeExample} />
                     </div>
                 </Content>
             </Layout>

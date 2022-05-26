@@ -15,7 +15,6 @@ const ButtonDemo = ()=>{
                 <ButtonExample />
             </Demo>
             <TableDemo database={TableData} />
-
         </div>
     )
 }
