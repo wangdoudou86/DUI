@@ -1,31 +1,42 @@
+import { scopedClassMaker, classes } from "../helpers/utils";
 import React from "react";
 
 interface sourceDataItem {
-    text: string;
-    value: string;
-    children?: sourceDataItem[];
+  text: string;
+  value: string;
+  children?: sourceDataItem[];
 }
 
 interface TreeProps {
-    sourceData: sourceDataItem[]
+  sourceData: sourceDataItem[];
 }
 
-const Tree: React.FunctionComponent<TreeProps> = (props)=>{
+const scopedClass = scopedClassMaker("dui-tree");
+const sc = scopedClass;
+
+const Tree: React.FunctionComponent<TreeProps> = (props) => {
+  const renderItem = (item: sourceDataItem, level = 1) => {
     return (
-        <>
-           {
-              props.sourceData.map(item => {
-                  return <div>{item.text}
-                    {
-                        item.children?.map(item2 => {
-                            return <div>{item2.text}</div>
-                        })
-                    }
-                  </div>
-              }) 
-           }
-        </>
-    )
-}
+      <div
+        className={classes(sc("item"), sc(`level-${level}`))}
+        key={item.value}
+        style={{ paddingLeft: (level - 1) * 10 + "px" }}
+      >
+        {item.text}
+        {item.children?.map((sub) => {
+          return renderItem(sub, level + 1);
+        })}
+      </div>
+    );
+  };
+
+  return (
+    <>
+      {props.sourceData.map((item) => {
+        return renderItem(item);
+      })}
+    </>
+  );
+};
 
 export default Tree;

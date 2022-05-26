@@ -12,6 +12,13 @@ const TreeExample: React.FunctionComponent = ()=>{
         {
             text: '1.2',
             value: '1.2',
+            children: [{
+                text: '1.2.1',
+                value: '1.2.1',
+            },{
+                text: '1.2.2',
+                value: '1.2.2',
+            }]
         }] 
     },{
         text: '2',
