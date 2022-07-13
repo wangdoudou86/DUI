@@ -1,5 +1,6 @@
 import { scopedClassMaker, classes } from "../helpers/utils";
 import React from "react";
+import './tree.scss';
 
 interface sourceDataItem {
   text: string;
@@ -20,9 +21,9 @@ const Tree: React.FunctionComponent<TreeProps> = (props) => {
       <div
         className={classes(sc("item"), sc(`level-${level}`))}
         key={item.value}
-        style={{ paddingLeft: (level - 1) * 10 + "px" }}
       >
-        {item.text}
+        <div className={sc('text')}>{item.text}</div>
+        
         {item.children?.map((sub) => {
           return renderItem(sub, level + 1);
         })}
@@ -31,11 +32,11 @@ const Tree: React.FunctionComponent<TreeProps> = (props) => {
   };
 
   return (
-    <>
+    <div className={sc()}>
       {props.sourceData.map((item) => {
         return renderItem(item);
       })}
-    </>
+    </div>
   );
 };
 

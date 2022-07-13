@@ -1,0 +1,37 @@
+.dui-tree{
+    // border: 1px solid orange;
+    &-item{
+        outline: 1px solid;
+        line-height: 1.5;
+    }
+    &-level-1{
+        .dui-tree-text{
+            padding-left: 0;
+        }
+    }
+    &-level-2{
+        .dui-tree-text{
+            padding-left: 1em;
+        }
+    }
+    &-level-3{
+        .dui-tree-text{
+            padding-left: 2em;
+        }
+    }
+    &-level-4{
+        .dui-tree-text{
+            padding-left: 3em;
+        }
+    }
+    &-level-5{
+        .dui-tree-text{
+            padding-left: 4em;
+        }
+    }
+    &-text{
+        &:hover{
+            background-color: pink;
+        }
+    }
+}
